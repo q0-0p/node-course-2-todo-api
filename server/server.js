@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser=require('body-parser');
+const bodyParser = require('body-parser');
 
 
 const {mongoose} = require('./db/mongoose');
@@ -28,6 +28,14 @@ app.post('/todos', (req, res) =>{
     });
 })
 
+
+app.get('/todos', (req,res)=>{
+    Todo.find().then((todos)=>{
+        res.send({todos});
+    }, (e) =>{
+        res.status(400).send(e);
+    })
+});
 
 //GET todos/2131289d
 
