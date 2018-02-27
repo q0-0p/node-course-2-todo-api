@@ -8,13 +8,13 @@ var password = '123abc!';
 
 
 // bcrypt.genSalt(10, (err, salt) =>{
-//     bcrypt.hass(pasword, salt, (err, hash) =>{
+//     bcrypt.hash(password, salt, (err, hash) =>{
 //         console.log(hash);
 //     })
 // })
 
 
-var hashedPassword = '111';
+var hashedPassword = '$2a$10$JekRK3SzqSvFOeW8/.bBrOXu.4BDyqinZtxEEpuFA/3NtByKwYqHS';
 bcrypt.compare(password, hashedPassword, (err, res) =>{
     console.log(res);
 })
